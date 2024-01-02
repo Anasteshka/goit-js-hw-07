@@ -27,16 +27,16 @@ const images = [
 
 const galleryList = document.querySelector(".gallery");
 
-const galleryListTemplate = (obj) => {
-  const imageLink = obj.url;
-  const imageDescription = obj.alt;
+function galleryListTemplate(img) {
+  const imageLink = img.url;
+  const imageDescription = img.alt;
 
-  return `<li><img src="${imageLink}" alt="${imageDescription}" /></li>`;
-};
+  return `<li class="gallery-item"><img src="${imageLink}" alt="${imageDescription}" width="360" height="300" /></li>`;
+}
 
-function renderColor() {
-  const markup = images.map(galleryListTemplate).join("\n\n");
+function renderImage() {
+  const markup = images.map(galleryListTemplate).join("");
   galleryList.insertAdjacentHTML("afterbegin", markup);
 }
 
-renderColor();
+renderImage();
