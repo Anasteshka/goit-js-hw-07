@@ -36,6 +36,7 @@ function galleryListTemplate(img) {
 
 function renderImage() {
   const markup = images.map(galleryListTemplate).join("");
+
   galleryList.insertAdjacentHTML("afterbegin", markup);
 }
 
