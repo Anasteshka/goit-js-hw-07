@@ -34,10 +34,10 @@ function galleryListTemplate(img) {
   return `<li class="gallery-item"><img src="${imageLink}" alt="${imageDescription}" width="360" height="300" /></li>`;
 }
 
-function renderImage() {
-  const markup = images.map(galleryListTemplate).join("");
+function renderImage(imgArray) {
+  const markup = imgArray.map(galleryListTemplate).join("");
 
   galleryList.insertAdjacentHTML("afterbegin", markup);
 }
 
-renderImage();
+renderImage(images);
